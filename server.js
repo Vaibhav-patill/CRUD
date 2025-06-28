@@ -1,3 +1,4 @@
+
 const express = require("express");
 const app = express();
 const db = require("./db");
@@ -15,6 +16,9 @@ const logRequest = (req, res, next) => {
 
 const menuRouter = require("./routes/menuRouter");
 const personRouter = require("./routes/personRoutes");
+app.get('/', function (req, res) {
+    res.send('Welcome to our Hotel');
+})
 app.use("/person",personRouter);
 app.use("/menu",menuRouter );
 
